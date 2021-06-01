@@ -1,6 +1,6 @@
-from app.models import Carros
+from app.models import Alunos
 from django.shortcuts import render
-from app.forms import CarrosForm
+from app.forms import AlunosForm
 
 # Create your views here.
 
@@ -9,5 +9,5 @@ def home(request):
 
 def form(request):
     data = {}
-    data['form'] = CarrosForm()
+    data['form'] = AlunosForm()
     return render(request, 'form.html', data)
