@@ -15,20 +15,56 @@
         </div>
 
         <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="/" class="btn btn-info">Voltar</a>
+            <a href="/" id="btn-voltar" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+              </svg></a>
         </div>
 
         <div class="col-8 m-auto pt-4 pb-2 text-center">
             <div id="result"></div>
             <form name="form" id="form" action="{% if db%}/update/{{db.id}}{% else %}/create/{% endif %}" method="post">
                 {% csrf_token %}
-                <!--{{form.as_p}}-->
+                <!--<div class="form-group mt-4">
+                <table>
+                    {{form.as_table}}
+                </table>
+                </div>-->
+                <!--<div class="col-8 m-auto pt-auto pb-2 text-center">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td align=left>Pasta:</td>
+                              <td>{{form.pasta}}</td>
+                            </tr>
+                            <tr>
+                                <td align=left>Ano:</td>
+                                <td>{{form.ano}}</td>
+                            </tr>
+                            <tr>
+                                <td align=left>Nome:</td>
+                                <td>{{form.nome}}</td>
+                            </tr>
+                            <tr>
+                                <td align=left>Filiação:</td>
+                                <td> {{form.filiacao}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>-->
                 <div class="form-group mt-4">Pasta: {{form.pasta}}</div>
                 <div class="form-group mt-4">Ano: {{form.ano}}</div>
                 <div class="form-group mt-4">Nome: {{form.nome}}</div>
                 <div class="form-group mt-4">Filiação: {{form.filiacao}}</div>
                 <div class="form-group mt-4">
-                    <input type="submit" class="btn btn-success" value="Salvar">
+                    <button type="submit" id="btn-salvar" class="btn btn-success mt-4" value="Salvar"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                        <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+                      </svg></button>
                 </div>
             </form>
         </div>
