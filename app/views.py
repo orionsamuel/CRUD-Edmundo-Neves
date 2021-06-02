@@ -8,6 +8,7 @@ from app.models import Alunos
 def home(request):
     data = {}
     data['db'] = Alunos.objects.all()
+    data['form'] = AlunosForm()
     return render(request, 'index.html', data)
 
 def form(request):

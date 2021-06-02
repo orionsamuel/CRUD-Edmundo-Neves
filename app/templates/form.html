@@ -24,39 +24,6 @@
             <div id="result"></div>
             <form name="form" id="form" action="{% if db%}/update/{{db.id}}{% else %}/create/{% endif %}" method="post">
                 {% csrf_token %}
-                <!--<div class="form-group mt-4">
-                <table>
-                    {{form.as_table}}
-                </table>
-                </div>-->
-                <!--<div class="col-8 m-auto pt-auto pb-2 text-center">
-                    <table>
-                        <thead>
-                          <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              <td align=left>Pasta:</td>
-                              <td>{{form.pasta}}</td>
-                            </tr>
-                            <tr>
-                                <td align=left>Ano:</td>
-                                <td>{{form.ano}}</td>
-                            </tr>
-                            <tr>
-                                <td align=left>Nome:</td>
-                                <td>{{form.nome}}</td>
-                            </tr>
-                            <tr>
-                                <td align=left>Filiação:</td>
-                                <td> {{form.filiacao}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>-->
                 <div class="form-group mt-4">Pasta: {{form.pasta}}</div>
                 <div class="form-group mt-4">Ano: {{form.ano}}</div>
                 <div class="form-group mt-4">Nome: {{form.nome}}</div>
