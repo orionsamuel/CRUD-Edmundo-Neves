@@ -18,7 +18,6 @@ $(document).ready(() => {
         
         const modalBase = $('#modalCadastro')
         modalBase.on('show.bs.modal', function (e) {
-            alert('Oi');
             const button = e.relatedTarget
             let check = button.getAttribute('data-bs-check')
             let id = button.getAttribute('data-bs-id-aluno')
