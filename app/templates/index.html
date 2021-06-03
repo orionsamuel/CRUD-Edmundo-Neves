@@ -92,6 +92,12 @@
             </svg></a>
         </div>
 
+        <div class="col-8 m-auto pt-3 pb-2 text-center">
+          <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
+          </form>
+        </div>
+
         <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastro" aria-hidden="true">
           <div class="modal-dialog">
               <div class="modal-content">
@@ -172,6 +178,17 @@
                   {% endfor %}
                 </tbody>
               </table>
+        </div>
+        <div class="pagination">
+          {% if db.has_previous %}
+            <a href="?page={{db.previous_page_number}}"> &lt; </a>
+          {% endif %}
+
+          {{db.number}}
+
+          {% if db.has_next %}
+            <a href="?page={{db.next_page_number}}"> &gt; </a>
+          {% endif %}
         </div>
         <div class="footer">
           {% if user.is_authenticated %}
