@@ -21,10 +21,10 @@ $(document).ready(() => {
             alert('Oi');
             const button = e.relatedTarget
             let check = button.getAttribute('data-bs-check')
-            let id = button.getAttribute('data-bs-pasta')
-            let nome = button.getAttribute('data-bs-ano')
-            let cpf = button.getAttribute('data-bs-nome')
-            let email = button.getAttribute('data-bs-filiacao')
+            let pasta = button.getAttribute('data-bs-pasta')
+            let ano = button.getAttribute('data-bs-ano')
+            let nome = button.getAttribute('data-bs-nome')
+            let filiacao = button.getAttribute('data-bs-filiacao')
 
             $('#check_edit').val(check)
             $('#id-aluno').val(id)
