@@ -26,6 +26,12 @@ $(document).ready(() => {
             let nome = button.getAttribute('data-bs-nome')
             let filiacao = button.getAttribute('data-bs-filiacao')
 
+            if(check === 'true'){
+                $('#btn-salvar').html("Atualizar")
+            }else{
+                $('#btn-salvar').html("Cadastrar")
+            }
+
             $('#check_edit').val(check)
             $('#id-aluno').val(id)
             $('#id_pasta').val(pasta)
