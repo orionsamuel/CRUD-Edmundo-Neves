@@ -24,6 +24,6 @@ urlpatterns = [
     path('submit/', submit_login, name='submit_login'),
     path('logout/', user_logout, name='logout'),
     path('create/', create, name='create'),
-    path('update/<int:pk>', update, name='update'),
-    path('delete/<int:pk>', delete, name='delete'),
+    path('update/<int:pk>/', update, name='update'),
+    path('delete/<int:pk>/', delete, name='delete'),
 ]
