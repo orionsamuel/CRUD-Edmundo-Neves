@@ -1,19 +1,30 @@
+from django.core import paginator
 from app.models import Alunos
-from django.shortcuts import redirect, render
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required, permission_required
-from django.views.decorators.csrf import csrf_protect
+from app.forms import AlunosForm
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.models import User
-from app.forms import AlunosForm
-from app.models import Alunos
+from django.shortcuts import redirect, render
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 
 @login_required(login_url='/login/')
 def home(request):
     data = {}
-    data['db'] = Alunos.objects.all()
+    search = request.GET.get('search')
+    all = Alunos.objects.all()
+    paginator = Paginator(all, 10)
+    pages = request.GET.get('page')
+    data['db'] = paginator.get_page(pages)
+    if search:
+        data['db'] = Alunos.objects.filter(nome__icontains=search)
+        paginator_src = Paginator(data['db'], 10)
+        data['paginator'] = paginator_src.get_page(pages)
+    else:
+        data['paginator'] = paginator.get_page(pages)
     data['form'] = AlunosForm()
     return render(request, 'index.html', data)
 
