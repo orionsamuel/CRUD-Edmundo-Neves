@@ -1,0 +1,76 @@
+div.bandeira{
+    width: 35%;
+    float: left;
+}
+
+div.titulo{
+    width: 65%;
+    float: right;
+}
+
+.modal-body input{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.modal-body input:focus{
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #329D9C;
+    min-height: 9vh;
+    max-height: 9vh;
+    box-shadow: 0 -5px 10px -5px rgba(70, 70, 70, 0.4);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.footer .greetings {
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none; 
+}
+
+.form-logout {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 0.5rem;
+    margin-right: 3rem; 
+}
+
+.form-logout .btn-logout {
+    background: #3d3c3c;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(110, 109, 109, 0.3); 
+}
+
+.form-logout .btn-logout:hover {
+    background: #555454;
+    border: 1px solid #555454;
+    border-radius: 0.5rem; 
+}

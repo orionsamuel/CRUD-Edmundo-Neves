@@ -47,7 +47,9 @@
             outline: 0;
             box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
           }
-
+          .content{
+            min-height: 85%;
+          }
           .footer {
             position: relative;
             bottom: 0;
@@ -87,6 +89,7 @@
     </head>
 
     <body style="background-color:rgb(188, 203, 204)">
+      <div class="content">
         <div class="col-8 m-auto pt-2 pb-2 text-center">
           <div class="bandeira" align="left">
             <img src="{% static 'assets/images/bandeira-rn.png' %}" width="50%"/>
@@ -190,18 +193,23 @@
                 </tbody>
               </table>
         </div>
-        <div class="pagination col-8 m-auto pt-auto pb-auto text-center">
+        <div class="col-1 m-auto pt-auto pb-auto text-center">
+          <ul class="pagination"  align="center">
           {% if db.has_previous %}
-            <a href="?page={{db.previous_page_number}}"> &lt; </a>
+          <li class="page-item"><a href="?page={{db.previous_page_number}}" class="page-link" aria-label="Anterior"> <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Anterior</span> </a></li>
           {% endif %}
 
-          {{db.number}}
+          <li class="page-item"><a href="" class="page-link"> {{db.number}} </a></li>
 
           {% if db.has_next %}
-            <a href="?page={{db.next_page_number}}"> &gt; </a>
+          <li class="page-item"><a href="?page={{db.next_page_number}}" class="page-link" aria-label="Próximo"> <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Próximo</span> </a></li>
           {% endif %}
+          </ul>
         </div>
-        <div class="footer navbar-fixed-bottom">
+      </div>
+        <div class="footer">
           {% if user.is_authenticated %}
             <strong>Bem vindo (a), {{user.get_full_name}}</strong>
           {% endif %}
