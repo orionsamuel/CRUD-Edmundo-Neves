@@ -12,6 +12,16 @@
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
         <script src="https://kit.fontawesome.com/c5dcbf4cfc.js" crossorigin="anonymous"></script>
         <style>
+          div.bandeira{
+            width: 35%;
+            float: left;
+          }
+
+          div.titulo{
+            width: 65%;
+            float: right;
+          }
+
           .modal-body input{
             display: block;
             width: 100%;
@@ -40,6 +50,8 @@
 
           .footer {
             position: relative;
+            bottom: 0;
+            width: 100%;
             background: #329D9C;
             min-height: 9vh;
             max-height: 9vh;
@@ -74,23 +86,22 @@
         </style>
     </head>
 
-    <body>
+    <body style="background-color:rgb(188, 203, 204)">
         <div class="col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Cadastro de Alunos da EEENN</h1>
+          <div class="bandeira" align="left">
+            <img src="{% static 'assets/images/bandeira-rn.png' %}" width="50%"/>
+          </div>
+          <div  class="titulo">
+            <h1 align="center">Cadastro de Alunos da EEENN</h1>
+          </div>
         </div>
 
-        <script>
-          $('#modalCadastro').on('hidden.bs.modal', function () {
-            location.reload();
-          })
-        </script> 
-
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="" id="btn-adicionar" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCadastro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
-              <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-              <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-            </svg></a>
-        </div>
+        <div class="col-8 m-auto pt-auto pb-2 text-right" align="right">
+          <a href="" id="btn-adicionar" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCadastro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg></a>
+      </div>
 
         <div class="col-8 m-auto pt-3 pb-2 text-center">
           <form method="get">
@@ -149,7 +160,7 @@
         <div class="col-8 m-auto pt-4 pb-2 text-center">
             <table class="table">
                 <thead>
-                  <tr>
+                  <tr style="background-color: #3d3c3c; color:#fff">
                     <th scope="col">Pasta</th>
                     <th scope="col">Ano</th>
                     <th scope="col">Nome</th>
@@ -179,7 +190,7 @@
                 </tbody>
               </table>
         </div>
-        <div class="pagination">
+        <div class="pagination col-8 m-auto pt-auto pb-auto text-center">
           {% if db.has_previous %}
             <a href="?page={{db.previous_page_number}}"> &lt; </a>
           {% endif %}
@@ -190,7 +201,7 @@
             <a href="?page={{db.next_page_number}}"> &gt; </a>
           {% endif %}
         </div>
-        <div class="footer">
+        <div class="footer navbar-fixed-bottom">
           {% if user.is_authenticated %}
             <strong>Bem vindo (a), {{user.get_full_name}}</strong>
           {% endif %}

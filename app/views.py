@@ -16,7 +16,7 @@ def home(request):
     data = {}
     search = request.GET.get('search')
     all = Alunos.objects.all()
-    paginator = Paginator(all, 5)
+    paginator = Paginator(all, 10)
     pages = request.GET.get('page')
     if search:
         data['db'] = Alunos.objects.filter(nome__icontains=search)
