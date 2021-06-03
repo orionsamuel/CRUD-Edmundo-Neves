@@ -1,13 +1,3 @@
-div.bandeira{
-    width: 35%;
-    float: left;
-}
-
-div.titulo{
-    width: 65%;
-    float: right;
-}
-
 .modal-body input{
     display: block;
     width: 100%;
@@ -54,7 +44,7 @@ div.titulo{
 
 .footer .greetings {
     margin-left: 1rem;
-    color: rgb(255,255,255);
+    color: white;
     text-decoration: none; 
 }
 
@@ -77,4 +67,41 @@ div.titulo{
     background: #555454;
     border: 1px solid #555454;
     border-radius: 0.5rem; 
+}
+
+.header-container {
+    width: 100%;
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.header-content img {
+    height: 150px;
+    width: 200px;
+}
+
+div.bandeira{
+    width: 35%;
+    float: left;
+}
+
+div.titulo{
+    width: 65%;
+    float: right;
+}
+
+.form-buscar-container {
+    display: flex;
+}
+.form-buscar-container .buscar-aluno {
+    width: 100%; 
+    margin-right: 0.5rem;
 }
