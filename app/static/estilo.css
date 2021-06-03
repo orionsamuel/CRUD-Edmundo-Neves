@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 .modal-body input{
     display: block;
     width: 100%;
