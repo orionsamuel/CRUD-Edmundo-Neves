@@ -121,14 +121,14 @@
         </div>
         <div class="col-1 m-auto pt-auto pb-auto text-center">
           <ul class="pagination"  align="center">
-          {% if db.has_previous %}
+          {% if paginator.has_previous %}
           <li class="page-item"><a href="?page={{db.previous_page_number}}" class="page-link" aria-label="Anterior"> <span aria-hidden="true">&laquo;</span>
             <span class="sr-only">Anterior</span> </a></li>
           {% endif %}
 
-          <li class="page-item"><a href="" class="page-link"> {{db.number}} </a></li>
+          <li class="page-item"><a href="" class="page-link"> {{paginator.number}} </a></li>
 
-          {% if db.has_next %}
+          {% if paginator.has_next %}
           <li class="page-item"><a href="?page={{db.next_page_number}}" class="page-link" aria-label="Próximo"> <span aria-hidden="true">&raquo;</span>
             <span class="sr-only">Próximo</span> </a></li>
           {% endif %}

@@ -18,10 +18,13 @@ def home(request):
     all = Alunos.objects.all()
     paginator = Paginator(all, 10)
     pages = request.GET.get('page')
+    data['db'] = paginator.get_page(pages)
     if search:
         data['db'] = Alunos.objects.filter(nome__icontains=search)
+        paginator_src = Paginator(data['db'], 10)
+        data['paginator'] = paginator_src.get_page(pages)
     else:
-        data['db'] = paginator.get_page(pages)
+        data['paginator'] = paginator.get_page(pages)
     data['form'] = AlunosForm()
     return render(request, 'index.html', data)
 
