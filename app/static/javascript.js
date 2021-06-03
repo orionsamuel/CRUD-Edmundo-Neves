@@ -21,6 +21,7 @@ $(document).ready(() => {
             alert('Oi');
             const button = e.relatedTarget
             let check = button.getAttribute('data-bs-check')
+            let id = button.getAttribute('data-bs-id-aluno')
             let pasta = button.getAttribute('data-bs-pasta')
             let ano = button.getAttribute('data-bs-ano')
             let nome = button.getAttribute('data-bs-nome')
