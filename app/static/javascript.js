@@ -28,8 +28,10 @@ $(document).ready(() => {
 
             if(check === 'true'){
                 $('#btn-salvar').html("Atualizar")
+                $('#form').action('/update/'+id+'/')
             }else{
                 $('#btn-salvar').html("Cadastrar")
+                $('#form').action('action', '/create/')
             }
 
             $('#check_edit').val(check)

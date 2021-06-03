@@ -22,12 +22,6 @@ def create(request):
         form.save()
         return redirect('home')
 
-def edit(request, pk):
-    data = {}
-    data['db'] = Alunos.objects.get(pk=pk)
-    data['form'] = AlunosForm(instance=data['db'])
-    return render(request, 'form.html', data)
-
 def update(request, pk):
     data = {}
     data['db'] = Alunos.objects.get(pk=pk)
