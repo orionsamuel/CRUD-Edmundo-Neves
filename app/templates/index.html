@@ -32,10 +32,10 @@
       <div class="form-buscar-container col-8 m-auto pt-3 pb-2 text-center">
         <form class="buscar-aluno" method="get">
           <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
-        </form>
-        <button class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <button id="btn-search" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
           <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
         </svg></button>
+        </form>
       </div>
 
       <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastro" aria-hidden="true">
@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <div div class="col-8 m-auto pt-4 pb-2" align="right">
+      <div div class="col-8 m-auto pt-8 pb-2" align="right">
         <a href="" id="btn-adicionar" class="btn btn-success" data-bs-toggle="modal"
           data-bs-target="#modalCadastro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">

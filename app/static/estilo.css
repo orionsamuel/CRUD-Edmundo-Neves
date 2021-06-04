@@ -102,9 +102,20 @@ div.titulo{
     float: right;
 }
 
-.form-buscar-container {
-    display: flex;
+#search{
+    width: 95%; 
+    margin-right: 0.0rem;
+    float: left;
 }
+
+#btn-search{
+    float: right;
+}
+
+#btn-adicionar{
+    margin-top: 5vh;
+}
+
 .form-buscar-container .buscar-aluno {
     width: 100%; 
     margin-right: 0.5rem;
