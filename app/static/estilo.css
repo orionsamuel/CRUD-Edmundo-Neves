@@ -110,6 +110,7 @@ div.titulo{
 
 #btn-search{
     float: right;
+    margin-left: 0rem;
 }
 
 #btn-adicionar{
@@ -120,3 +121,37 @@ div.titulo{
     width: 100%; 
     margin-right: 0.5rem;
 }
+
+.login {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#205072, #329D9C); }
+    
+.login .container {
+    height: 25rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+    border-radius: 1.5rem; }
+
+.login .container .title-container {
+    margin: 2rem;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    font-size: 1rem; }
+
+.login .container .form-container {
+    width: 70%; }
+
+.login .container form input {
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.7); }
+
+.login .container form input:focus {
+    background: white; }
